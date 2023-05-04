@@ -1,0 +1,30 @@
+@use './partials/global' as *;
+@use './partials/variables' as *;
+@use './partials/mixin' as *;
+
+.hero {
+    background: no-repeat center url(../assets/images/hero-shows.jpg);
+    background-size: cover;
+    &--overlay {
+        padding: 2rem 1rem;
+        background-color: rgba(50, 50, 50, 0.5);
+        @include tablet {
+            padding: 10rem 2.25rem;
+            display: flex;
+            justify-content: space-between;
+        }
+        @include desktop {
+            padding: 15rem 5rem;
+        }
+    }
+    &__paragraph {
+        color: $white;
+        padding-bottom: 1rem;
+        font-weight: map-get($map: $font-weights, $key: demi);
+    }
+    &__heading {
+        color: $white;
+        width: 80%;
+        margin-bottom: 1rem;
+    }
+}
