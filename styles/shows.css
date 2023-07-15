@@ -152,49 +152,49 @@
   color: #FFFFFF;
 }
 @media (min-width: 768px) {
-  .footer .footer__container {
+  .footer__container {
     padding: 2rem;
   }
-  .footer .footer__heading {
+  .footer__heading {
     margin-right: 1.5rem;
   }
-  .footer .footer-social__container {
+  .footer-social__container {
     display: flex;
     align-items: baseline;
   }
-  .footer .footer-contact {
+  .footer-contact {
     display: flex;
     justify-content: space-around;
   }
-  .footer .footer-contact__container {
+  .footer-contact__container {
     margin-right: 3rem;
   }
-  .footer .footer__logo-container {
-    position: relative;
-  }
-  .footer__logo {
-    font-size: 1.5rem;
-    position: absolute;
-    bottom: 13.5rem;
-    left: 80%;
-  }
 }
+.footer .footer__logo-container {
+  position: relative;
+}
+.footer__logo {
+  font-size: 1.5rem;
+  position: absolute;
+  bottom: 13.5rem;
+  left: 80%;
+}
+
 @media (min-width: 1280px) {
-  .footer .footer__container {
+  .footer__container {
     padding: 5rem 12rem;
   }
-  .footer .footer__heading {
+  .footer__heading {
     margin-right: 1.5rem;
   }
-  .footer .footer-contact {
+  .footer-contact {
     display: flex;
     justify-content: flex-start;
   }
-  .footer .footer__logo {
+  .footer__logo {
     left: 87%;
   }
 }
-
 .hero {
   background: no-repeat center url(../assets/images/hero-shows.jpg);
   background-size: cover;
