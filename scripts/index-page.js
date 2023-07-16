@@ -45,11 +45,11 @@ const dateInFull = function () {
   const date = new Date();
   const year = date.getFullYear();
   const month = date.getMonth();
-  const day = date.getDay();
+  const day = date.getDate();
   const hour = date.getHours();
   const mins = String(date.getMinutes()).padStart(2, 0);
 
-  return `${month}.${day}.${year}, ${hour}:${mins}`;
+  return `${month+1}.${day}.${year}, ${hour}:${mins}`;
 };
 
 // Creating date for initial comment
