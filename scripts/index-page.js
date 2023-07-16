@@ -49,7 +49,7 @@ const dateInFull = function () {
   const hour = date.getHours();
   const mins = String(date.getMinutes()).padStart(2, 0);
 
-  return `${month+1}.${day}.${year}, ${hour}:${mins}`;
+  return `${String(month + 1).padStart(2, 0)}.${day}.${year}, ${hour}:${mins}`;
 };
 
 // Creating date for initial comment
@@ -71,7 +71,7 @@ const nameUppercasing = () => {
 
 formButton.addEventListener("click", function (e) {
   e.preventDefault();
-
+  
   const userComment = setTimeout(() => {
     const newDiv2 = document.createElement("div");
     newDiv2.className = "comment__dynamic";
