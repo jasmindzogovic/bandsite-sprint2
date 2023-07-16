@@ -64,6 +64,14 @@ dateInComment.textContent = dateInFull();
 formButton.addEventListener("click", function (e) {
   e.preventDefault();
 
+  const nameInput = String(formName.value).split(" ");
+  const [firstName, lastName] = [nameInput[0], nameInput[1]];
+  const [fullFirst, fullLast] = [
+    firstName[0].toUpperCase() + firstName.slice(1),
+    lastName[0].toUpperCase() + lastName.slice(1),
+  ];
+  const fullName = fullFirst.concat(" ", fullLast);
+
   if (formName.value === "" && formComment.value === "") {
     prompt("Please input name and comment below");
   } else {
@@ -75,7 +83,7 @@ formButton.addEventListener("click", function (e) {
       const nameInComment2 = document.createElement("p");
       nameInComment2.className = "comment__name-generated";
       newDiv2.appendChild(nameInComment2);
-      nameInComment2.textContent = formName.value;
+      nameInComment2.textContent = fullName;
 
       const contentInComment2 = document.createElement("p");
       contentInComment2.className = "comment__dynamic-content";
