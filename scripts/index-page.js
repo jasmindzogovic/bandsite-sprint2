@@ -59,43 +59,39 @@ dateInComment.className = "comment__date";
 newDiv.appendChild(dateInComment);
 dateInComment.textContent = dateInFull();
 
-// Uppercasing first letters of name
-
-const nameUppercasing = () => {
-  const editName = String(formName.split(" "));
-  const fullName = editName[0].toUpperCase() + editName.slice();
-  return fullName;
-};
-
 // Event listener function to create a new comment
 
 formButton.addEventListener("click", function (e) {
   e.preventDefault();
-  
-  const userComment = setTimeout(() => {
-    const newDiv2 = document.createElement("div");
-    newDiv2.className = "comment__dynamic";
-    commentsSection.appendChild(newDiv2);
 
-    const nameInComment2 = document.createElement("p");
-    nameInComment2.className = "comment__name-generated";
-    newDiv2.appendChild(nameInComment2);
-    nameInComment2.textContent = formName.value;
+  if (formName.value === "" && formComment.value === "") {
+    prompt("Please input name and comment below");
+  } else {
+    const userComment = setTimeout(() => {
+      const newDiv2 = document.createElement("div");
+      newDiv2.className = "comment__dynamic";
+      commentsSection.appendChild(newDiv2);
 
-    const contentInComment2 = document.createElement("p");
-    contentInComment2.className = "comment__dynamic-content";
-    newDiv2.appendChild(contentInComment2);
-    contentInComment2.textContent = formComment.value;
+      const nameInComment2 = document.createElement("p");
+      nameInComment2.className = "comment__name-generated";
+      newDiv2.appendChild(nameInComment2);
+      nameInComment2.textContent = formName.value;
 
-    const dateInComment2 = document.createElement("p");
-    dateInComment2.className = "comment__date";
-    newDiv2.appendChild(dateInComment2);
-    dateInComment2.textContent = dateInFull();
+      const contentInComment2 = document.createElement("p");
+      contentInComment2.className = "comment__dynamic-content";
+      newDiv2.appendChild(contentInComment2);
+      contentInComment2.textContent = formComment.value;
 
-    formName.value = "";
-    formName.style.border = "1px solid #E1E1E1";
-    formComment.value = "";
-  }, 1000);
+      const dateInComment2 = document.createElement("p");
+      dateInComment2.className = "comment__date";
+      newDiv2.appendChild(dateInComment2);
+      dateInComment2.textContent = dateInFull();
 
-  return userComment;
+      formName.value = "";
+      formName.style.border = "1px solid #E1E1E1";
+      formComment.value = "";
+    }, 1000);
+
+    return userComment;
+  }
 });
