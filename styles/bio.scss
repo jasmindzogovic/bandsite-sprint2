@@ -154,10 +154,10 @@
 }
 
 .comment {
-  width: 15rem;
+  max-width: 15rem;
   background-color: #dfdfdf;
   border-radius: 3px;
-  margin-top: 2rem;
+  margin-left: 1rem;
   padding: 1rem;
   color: $bandsite-black;
   position: relative;
@@ -175,10 +175,10 @@
     right: 1rem;
   }
   &__dynamic {
-    width: 15rem;
+    max-width: 15rem;
     background-color: #dfdfdf;
     border-radius: 3px;
-    margin-top: 2rem;
+    margin-left: 2rem;
     padding: 1rem;
     color: $bandsite-black;
     position: relative;
@@ -187,10 +187,28 @@
       margin-bottom: 1rem;
     }
   }
+  &__name-generated {
+    font-size: 1.1rem;
+    font-weight: map-get($map: $font-weights, $key: bold);
+  }
+}
+
+.comment__dynamic-name {
+  font-size: 1.1rem;
+  font-weight: map-get($map: $font-weights, $key: bold);
+}
+
+.comments__section {
+  display: flex;
+}
+
+.app__container {
+  display: flex;
 }
 
 #form {
   display: flex;
+  margin-left: 1rem;
 }
 
 #formImage {

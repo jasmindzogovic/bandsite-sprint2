@@ -345,10 +345,10 @@
 }
 
 .comment {
-  width: 15rem;
+  max-width: 15rem;
   background-color: #dfdfdf;
   border-radius: 3px;
-  margin-top: 2rem;
+  margin-left: 1rem;
   padding: 1rem;
   color: #323232;
   position: relative;
@@ -367,10 +367,10 @@
   right: 1rem;
 }
 .comment__dynamic {
-  width: 15rem;
+  max-width: 15rem;
   background-color: #dfdfdf;
   border-radius: 3px;
-  margin-top: 2rem;
+  margin-left: 2rem;
   padding: 1rem;
   color: #323232;
   position: relative;
@@ -379,9 +379,27 @@
 .comment__dynamic > * {
   margin-bottom: 1rem;
 }
+.comment__name-generated {
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.comment__dynamic-name {
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.comments__section {
+  display: flex;
+}
+
+.app__container {
+  display: flex;
+}
 
 #form {
   display: flex;
+  margin-left: 1rem;
 }
 
 #formImage {
