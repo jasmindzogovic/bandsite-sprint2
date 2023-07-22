@@ -20,9 +20,13 @@ commentsSection.appendChild(formAndCommentContainer);
 
 formAndCommentContainer.appendChild(form);
 
+const commentsContainer = document.createElement("div");
+commentsContainer.className = "comments__container";
+commentsSection.appendChild(commentsContainer);
+
 const newContainer = document.createElement("div");
 newContainer.className = "comment__container";
-formAndCommentContainer.appendChild(newContainer);
+commentsContainer.appendChild(newContainer);
 
 const newDiv = document.createElement("div");
 newDiv.className = "comment";
@@ -61,7 +65,7 @@ dateInComment.textContent = dateInFull();
 
 // Event listener function to create a new comment
 
-formButton.addEventListener("click", function (e) {
+form.addEventListener("submit", function (e) {
   e.preventDefault();
 
   const nameInput = String(formName.value).split(" ");
@@ -72,13 +76,13 @@ formButton.addEventListener("click", function (e) {
   ];
   const fullName = fullFirst.concat(" ", fullLast);
 
-  if (formName.value === "" && formComment.value === "") {
-    prompt("Please input name and comment below");
+  if (formName.value === "" || formComment.value === "") {
+    alert("Please input name and comment below");
   } else {
     const userComment = setTimeout(() => {
       const newDiv2 = document.createElement("div");
       newDiv2.className = "comment__dynamic";
-      commentsSection.appendChild(newDiv2);
+      commentsContainer.appendChild(newDiv2);
 
       const nameInComment2 = document.createElement("p");
       nameInComment2.className = "comment__name-generated";
