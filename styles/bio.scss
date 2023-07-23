@@ -148,17 +148,11 @@
 
 //styling for comments section
 
-.comments__section {
-  padding: 1rem;
-  position: relative;
-}
-
 .comment {
   max-width: 15rem;
   background-color: #dfdfdf;
   border-radius: 3px;
   margin-left: 2rem;
-  margin-top: 2rem;
   padding: 1rem;
   color: $bandsite-black;
   position: relative;
@@ -243,6 +237,11 @@
   height: 5rem;
   border-radius: 0.25rem;
   resize: none;
+}
+
+.comments__section {
+  padding: 2rem 10rem;
+  display: flex;
 }
 
 .form {
