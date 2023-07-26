@@ -76,7 +76,7 @@ form.addEventListener("submit", function (e) {
   ];
   const fullName = fullFirst.concat(" ", fullLast);
 
-  if (formName.value === "" || formComment.value === "") {
+  if (formName.value === "" && formComment.value === "") {
     alert("Please input name and comment below");
   } else {
     const userComment = setTimeout(() => {
