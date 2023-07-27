@@ -63,11 +63,9 @@ dateInComment.className = "comment__date";
 newDiv.appendChild(dateInComment);
 dateInComment.textContent = dateInFull();
 
-// Event listener function to create a new comment
+// Function to capitalize first letter
 
-form.addEventListener("submit", function (e) {
-  e.preventDefault();
-
+const toCapitalize = () => {
   const nameInput = String(formName.value).split(" ");
   const [firstName, lastName] = [nameInput[0], nameInput[1]];
   const [fullFirst, fullLast] = [
@@ -75,6 +73,13 @@ form.addEventListener("submit", function (e) {
     lastName[0].toUpperCase() + lastName.slice(1),
   ];
   const fullName = fullFirst.concat(" ", fullLast);
+  return fullName;
+};
+
+// Event listener function to create a new comment
+
+form.addEventListener("submit", function (e) {
+  e.preventDefault();
 
   if (formName.value === "" && formComment.value === "") return;
   else {
@@ -86,7 +91,7 @@ form.addEventListener("submit", function (e) {
       const nameInComment2 = document.createElement("p");
       nameInComment2.className = "comment__name-generated";
       newDiv2.appendChild(nameInComment2);
-      nameInComment2.textContent = fullName;
+      nameInComment2.textContent = toCapitalize();
 
       const contentInComment2 = document.createElement("p");
       contentInComment2.className = "comment__dynamic-content";
