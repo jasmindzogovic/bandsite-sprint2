@@ -1,30 +1,46 @@
-@use './partials/global' as *;
-@use './partials/variables' as *;
-@use './partials/mixin' as *;
+@use "./partials/global" as *;
+@use "./partials/variables" as *;
+@use "./partials/mixin" as *;
 
 .hero {
-    background: no-repeat center url(../assets/images/hero-shows.jpg);
-    background-size: cover;
-    &--overlay {
-        padding: 2rem 1rem;
-        background-color: rgba(50, 50, 50, 0.5);
-        @include tablet {
-            padding: 10rem 2.25rem;
-            display: flex;
-            justify-content: space-between;
-        }
-        @include desktop {
-            padding: 15rem 5rem;
-        }
+  background: no-repeat center url(../assets/images/hero-shows.jpg);
+  background-size: cover;
+  &--overlay {
+    padding: 2rem 1rem;
+    background-color: rgba(50, 50, 50, 0.5);
+    @include tablet {
+      padding: 10rem 2.25rem;
+      display: flex;
+      justify-content: space-between;
     }
-    &__paragraph {
-        color: $white;
-        padding-bottom: 1rem;
-        font-weight: map-get($map: $font-weights, $key: demi);
+    @include desktop {
+      padding: 15rem 5rem;
     }
-    &__heading {
-        color: $white;
-        width: 80%;
-        margin-bottom: 1rem;
-    }
+  }
+  &__paragraph {
+    color: $white;
+    padding-bottom: 1rem;
+    font-weight: map-get($map: $font-weights, $key: demi);
+  }
+  &__heading {
+    color: $white;
+    width: 80%;
+    margin-bottom: 1rem;
+  }
+}
+
+.section__shows {
+  background: linear-gradient(to bottom right, $mercury, $alabaster);
+  padding: 10rem 5rem;
+  &--header {
+    font-weight: map-get($map: $font-weights, $key: bold);
+    color: $bandsite-black;
+  }
+  &--tours {
+    display: flex;
+  }
+}
+
+.tour__container > * {
+    margin-bottom: 1rem;
 }

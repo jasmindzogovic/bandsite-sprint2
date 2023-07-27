@@ -224,4 +224,20 @@
   color: #FFFFFF;
   width: 80%;
   margin-bottom: 1rem;
+}
+
+.section__shows {
+  background: linear-gradient(to bottom right, #E1E1E1, #FAFAFA);
+  padding: 10rem 5rem;
+}
+.section__shows--header {
+  font-weight: 700;
+  color: #323232;
+}
+.section__shows--tours {
+  display: flex;
+}
+
+.tour__container > * {
+  margin-bottom: 1rem;
 }/*# sourceMappingURL=shows.css.map */
