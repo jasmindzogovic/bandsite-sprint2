@@ -76,9 +76,8 @@ form.addEventListener("submit", function (e) {
   ];
   const fullName = fullFirst.concat(" ", fullLast);
 
-  if (formName.value === "" && formComment.value === "") {
-    alert("Please input name and comment below");
-  } else {
+  if (formName.value === "" && formComment.value === "") return;
+  else {
     const userComment = setTimeout(() => {
       const newDiv2 = document.createElement("div");
       newDiv2.className = "comment__dynamic";

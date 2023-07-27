@@ -195,6 +195,17 @@
     left: 87%;
   }
 }
+@keyframes slideIn {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-10%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
 /*Styling hero section, and adjusting the background image with a darker overlay--Making responsive*/
 .hero {
   background: no-repeat center url(../assets/Images/hero-bio.jpg);
@@ -371,6 +382,8 @@
   color: #323232;
   position: relative;
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  animation: slideIn 1s 1;
+  transition: ease-in;
 }
 .comment__dynamic > * {
   margin-bottom: 1rem;

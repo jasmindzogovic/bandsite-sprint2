@@ -1,0 +1,14 @@
+@use "./partials/variables" as *;
+@use "./partials/mixin" as *;
+
+@keyframes slideIn {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-10%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
