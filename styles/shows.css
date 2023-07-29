@@ -237,13 +237,14 @@
 }
 .section__shows--tours {
   display: flex;
+  flex-wrap: wrap;
 }
 
 .tour__container {
   font-size: 0.8rem;
 }
 .tour__container:hover {
-  transform: scale(1.05);
+  transform: scale(1.04);
   transition: all 0.25s ease-out;
 }
 .tour__container > * {
@@ -254,4 +255,8 @@
 }
 .tour__container--btn {
   padding: 0.3rem 0.7rem;
+  background-color: #323232;
+  color: #FAFAFA;
+  border: 0;
+  border-radius: 2px;
 }/*# sourceMappingURL=shows.css.map */

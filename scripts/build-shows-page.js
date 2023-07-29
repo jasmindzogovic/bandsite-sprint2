@@ -39,16 +39,20 @@ const tours = [
     city: "Florida, Miami",
     time: "10:00PM",
   },
+  {
+    date: "7.29.2023",
+    city: "Los Angeles, California",
+    time: "10:00PM",
+  },
 ];
 
 tours.forEach((tour) => {
   const tourContainer = document.createElement("div");
   tourContainer.className = "tour__container";
-  tourContainer.style.backgroundColor = "#323232";
+  tourContainer.style.borderBottom = "1px solid #323232";
   tourContainer.style.margin = "0rem 2rem 2rem 2rem";
-  tourContainer.style.color = "#FAFAFA";
+  tourContainer.style.color = "#323232";
   tourContainer.style.padding = ".6rem";
-  tourContainer.style.borderRadius = "5px";
   tourSectionContainer.appendChild(tourContainer);
 
   const tourDate = document.createElement("p");
