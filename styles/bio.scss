@@ -233,6 +233,10 @@
   }
 }
 
+input, textarea {
+  color: #afafaf;
+}
+
 #comments {
   margin-bottom: 1rem;
   padding: 0.75rem;
@@ -263,6 +267,7 @@
   }
   &__button {
     max-height: 2.5rem;
+    width: min-content;
     font-weight: map-get($map: $font-weights, $key: demi);
     padding: 0.7rem;
     background-color: $bandsite-black;

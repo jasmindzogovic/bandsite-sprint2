@@ -435,6 +435,10 @@
   border: 1px solid #d22d2d;
 }
 
+input, textarea {
+  color: #afafaf;
+}
+
 #comments {
   margin-bottom: 1rem;
   padding: 0.75rem;
@@ -464,6 +468,8 @@
 }
 .form__button {
   max-height: 2.5rem;
+  width: -moz-min-content;
+  width: min-content;
   font-weight: 600;
   padding: 0.7rem;
   background-color: #323232;
