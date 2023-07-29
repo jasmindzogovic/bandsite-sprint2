@@ -47,14 +47,13 @@ tours.forEach((tour) => {
   tourContainer.style.backgroundColor = "#323232";
   tourContainer.style.margin = "0rem 2rem 2rem 2rem";
   tourContainer.style.color = "#FAFAFA";
-  tourContainer.style.padding = "1rem";
+  tourContainer.style.padding = ".6rem";
   tourContainer.style.borderRadius = "5px";
   tourSectionContainer.appendChild(tourContainer);
 
   const tourDate = document.createElement("p");
   tourDate.className = "tour__container--date";
   tourDate.textContent = tour.date;
-  tourDate.style.fontSize = "1.5rem";
   tourContainer.appendChild(tourDate);
 
   const tourCity = document.createElement("p");
@@ -67,5 +66,8 @@ tours.forEach((tour) => {
   tourTime.textContent = tour.time;
   tourContainer.appendChild(tourTime);
 
-  tourContainer.insertAdjacentHTML("afterbegin", tourDate, tourCity, tourTime);
+  const tourBtn = document.createElement("button");
+  tourBtn.className = "tour__container--btn";
+  tourBtn.textContent = "Buy Tickets";
+  tourContainer.appendChild(tourBtn);
 });

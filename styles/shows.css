@@ -233,11 +233,25 @@
 .section__shows--header {
   font-weight: 700;
   color: #323232;
+  margin-right: 4rem;
 }
 .section__shows--tours {
   display: flex;
 }
 
+.tour__container {
+  font-size: 0.8rem;
+}
+.tour__container:hover {
+  transform: scale(1.05);
+  transition: all 0.25s ease-out;
+}
 .tour__container > * {
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
+}
+.tour__container--date {
+  font-size: 1rem;
+}
+.tour__container--btn {
+  padding: 0.3rem 0.7rem;
 }/*# sourceMappingURL=shows.css.map */

@@ -35,12 +35,26 @@
   &--header {
     font-weight: map-get($map: $font-weights, $key: bold);
     color: $bandsite-black;
+    margin-right: 4rem;
   }
   &--tours {
     display: flex;
   }
 }
 
-.tour__container > * {
-    margin-bottom: 1rem;
+.tour__container {
+  font-size: .8rem;
+  &:hover {
+    transform: scale(1.05);
+    transition: all 0.25s ease-out;
+  }
+  & > * {
+    margin-bottom: .5rem;
+  }
+  &--date {
+    font-size: 1rem;
+  }
+  &--btn {
+    padding: 0.3rem 0.7rem;
+  }
 }
