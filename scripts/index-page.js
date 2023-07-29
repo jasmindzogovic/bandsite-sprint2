@@ -81,8 +81,9 @@ const toCapitalize = () => {
 form.addEventListener("submit", function (e) {
   e.preventDefault();
 
-  if (formName.value === "" && formComment.value === "") return;
-  else {
+  if (formName.value === "" || formComment.value === "") {
+    alert(`Please input name and comment`);
+  } else {
     const userComment = setTimeout(() => {
       const newDiv2 = document.createElement("div");
       newDiv2.className = "comment__dynamic";
@@ -107,7 +108,6 @@ form.addEventListener("submit", function (e) {
       formName.style.border = "1px solid #E1E1E1";
       formComment.value = "";
     }, 1000);
-
-    return userComment;
   }
+  return userComment;
 });
