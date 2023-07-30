@@ -8,9 +8,21 @@ const formComment = document.getElementById("comments");
 const formButton = document.querySelector(".form__button");
 
 // Clearing the input fields on click
-formName.addEventListener("click", () => (formName.value = ""));
+formName.addEventListener("focus", (e) => {
+  formName.placeholder = "";
+});
 
-formComment.addEventListener("click", () => (formComment.value = ""));
+formName.addEventListener("blur", (e) => {
+  formName.placeholder = "Enter your name";
+});
+
+formComment.addEventListener("focus", (e) => {
+  formComment.placeholder = "";
+});
+
+formComment.addEventListener("blur", (e) => {
+  formComment.placeholder = "Enter your comment";
+});
 
 // Creating new elements on page through js
 

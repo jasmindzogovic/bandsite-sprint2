@@ -352,12 +352,12 @@
 
 .comment {
   max-width: 15rem;
-  background-color: #dfdfdf;
+  background-color: #323232;
   border-radius: 3px;
   margin-left: 2rem;
   margin-bottom: 2rem;
   padding: 1rem;
-  color: #323232;
+  color: #ffffff;
   position: relative;
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
@@ -476,6 +476,7 @@ input, textarea {
   border-radius: 0.2rem;
   color: #ffffff;
   border: 0;
+  cursor: pointer;
 }
 .form__button:hover {
   background-color: #000000;
