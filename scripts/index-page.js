@@ -121,5 +121,4 @@ form.addEventListener("submit", function (e) {
       formComment.value = "";
     }, 1000);
   }
-  return userComment;
 });
