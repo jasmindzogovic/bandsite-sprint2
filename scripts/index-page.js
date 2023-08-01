@@ -95,6 +95,8 @@ form.addEventListener("submit", function (e) {
 
   if (formName.value === "" || formComment.value === "") {
     alert(`Please input name and comment`);
+  } else if (!formName.value.includes(" ")) {
+    alert(`Please input full name`);
   } else {
     const userComment = setTimeout(() => {
       const newDiv2 = document.createElement("div");
