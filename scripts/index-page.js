@@ -7,6 +7,32 @@ const formName = document.getElementById("formName");
 const formComment = document.getElementById("comments");
 const formButton = document.querySelector(".form__button");
 
+// Date function
+
+const dateInFull = function () {
+  const date = new Date();
+  const year = date.getFullYear();
+  const month = date.getMonth();
+  const day = date.getDate();
+  const hour = date.getHours();
+  const mins = String(date.getMinutes()).padStart(2, 0);
+
+  return `${String(month + 1).padStart(2, 0)}.${day}.${year}, ${hour}:${mins}`;
+};
+
+// Function to capitalize first letter
+
+const toCapitalize = () => {
+  const nameInput = String(formName.value).split(" ");
+  const [firstName, lastName] = [nameInput[0], nameInput[1]];
+  const [fullFirst, fullLast] = [
+    firstName[0].toUpperCase() + firstName.slice(1),
+    lastName[0].toUpperCase() + lastName.slice(1),
+  ];
+  const fullName = fullFirst.concat(" ", fullLast);
+  return fullName;
+};
+
 // Clearing the input fields on click
 formName.addEventListener("focus", (e) => {
   formName.placeholder = "";
@@ -55,38 +81,12 @@ newDiv.appendChild(contentInComment);
 contentInComment.textContent =
   "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ";
 
-// Date function
-
-const dateInFull = function () {
-  const date = new Date();
-  const year = date.getFullYear();
-  const month = date.getMonth();
-  const day = date.getDate();
-  const hour = date.getHours();
-  const mins = String(date.getMinutes()).padStart(2, 0);
-
-  return `${String(month + 1).padStart(2, 0)}.${day}.${year}, ${hour}:${mins}`;
-};
-
 // Creating date for initial comment
 
 const dateInComment = document.createElement("p");
 dateInComment.className = "comment__date";
 newDiv.appendChild(dateInComment);
 dateInComment.textContent = dateInFull();
-
-// Function to capitalize first letter
-
-const toCapitalize = () => {
-  const nameInput = String(formName.value).split(" ");
-  const [firstName, lastName] = [nameInput[0], nameInput[1]];
-  const [fullFirst, fullLast] = [
-    firstName[0].toUpperCase() + firstName.slice(1),
-    lastName[0].toUpperCase() + lastName.slice(1),
-  ];
-  const fullName = fullFirst.concat(" ", fullLast);
-  return fullName;
-};
 
 // Event listener function to create a new comment
 
@@ -122,5 +122,6 @@ form.addEventListener("submit", function (e) {
       formName.style.border = "1px solid #E1E1E1";
       formComment.value = "";
     }, 1000);
+    return userComment;
   }
 });
