@@ -34,19 +34,19 @@ const toCapitalize = () => {
 };
 
 // Clearing the input fields on click
-formName.addEventListener("focus", (e) => {
+formName.addEventListener("focus", () => {
   formName.placeholder = "";
 });
 
-formName.addEventListener("blur", (e) => {
+formName.addEventListener("blur", () => {
   formName.placeholder = "Enter your name";
 });
 
-formComment.addEventListener("focus", (e) => {
+formComment.addEventListener("focus", () => {
   formComment.placeholder = "";
 });
 
-formComment.addEventListener("blur", (e) => {
+formComment.addEventListener("blur", () => {
   formComment.placeholder = "Enter your comment";
 });
 
