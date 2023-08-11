@@ -22,9 +22,9 @@ const dateInFull = function () {
 
 // Function to capitalize first letter
 
-const toCapitalize = () => {
-  const nameInput = String(formName.value).split(" ");
-  const [firstName, lastName] = [nameInput[0], nameInput[1]];
+const toCapitalize = function (nameString) {
+  const nameInput = String(nameString).split(" ");
+  const [firstName, lastName] = [...nameInput];
   const [fullFirst, fullLast] = [
     firstName[0].toUpperCase() + firstName.slice(1),
     lastName[0].toUpperCase() + lastName.slice(1),
@@ -50,6 +50,34 @@ formComment.addEventListener("blur", () => {
   formComment.placeholder = "Enter your comment";
 });
 
+// Variable for initial comment
+
+const lorem20 =
+  "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ";
+
+// Comment generating function
+
+const commentGenerator = function (name, comment) {
+  const newDiv = document.createElement("div");
+  newDiv.className = "comment__dynamic";
+  commentsContainer.appendChild(newDiv);
+
+  const nameInComment = document.createElement("p");
+  nameInComment.className = "comment__name-generated";
+  newDiv.appendChild(nameInComment);
+  nameInComment.textContent = toCapitalize(name);
+
+  const contentInComment = document.createElement("p");
+  contentInComment.className = "comment__dynamic-content";
+  newDiv.appendChild(contentInComment);
+  contentInComment.textContent = comment;
+
+  const dateInComment = document.createElement("p");
+  dateInComment.className = "comment__date";
+  newDiv.appendChild(dateInComment);
+  dateInComment.textContent = dateInFull();
+};
+
 // Creating new elements on page through js
 
 const formAndCommentContainer = document.createElement("section");
@@ -66,25 +94,7 @@ const newContainer = document.createElement("div");
 newContainer.className = "comment__container";
 commentsContainer.appendChild(newContainer);
 
-const newDiv = document.createElement("div");
-newDiv.className = "comment";
-newContainer.appendChild(newDiv);
-
-const nameInComment = document.createElement("p");
-nameInComment.className = "comment__name";
-newDiv.appendChild(nameInComment);
-nameInComment.textContent = "David Sorensen";
-
-const contentInComment = document.createElement("p");
-contentInComment.className = "comment__content";
-newDiv.appendChild(contentInComment);
-contentInComment.textContent =
-  "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ";
-
-const dateInComment = document.createElement("p");
-dateInComment.className = "comment__date";
-newDiv.appendChild(dateInComment);
-dateInComment.textContent = dateInFull();
+commentGenerator("David Sorensen", lorem20);
 
 // Event listener function to create a new comment
 
@@ -97,24 +107,7 @@ form.addEventListener("submit", function (e) {
     alert(`Please input full name`);
   } else {
     const userComment = setTimeout(() => {
-      const newDiv2 = document.createElement("div");
-      newDiv2.className = "comment__dynamic";
-      commentsContainer.appendChild(newDiv2);
-
-      const nameInComment2 = document.createElement("p");
-      nameInComment2.className = "comment__name-generated";
-      newDiv2.appendChild(nameInComment2);
-      nameInComment2.textContent = toCapitalize();
-
-      const contentInComment2 = document.createElement("p");
-      contentInComment2.className = "comment__dynamic-content";
-      newDiv2.appendChild(contentInComment2);
-      contentInComment2.textContent = formComment.value;
-
-      const dateInComment2 = document.createElement("p");
-      dateInComment2.className = "comment__date";
-      newDiv2.appendChild(dateInComment2);
-      dateInComment2.textContent = dateInFull();
+      commentGenerator(formName.value, formComment.value);
 
       formName.value = "";
       formName.style.border = "1px solid #E1E1E1";
