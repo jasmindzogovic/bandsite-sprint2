@@ -123,6 +123,9 @@
     width: 100%;
     margin-bottom: 1rem;
   }
+  &__images-container {
+    opacity: 0;
+  }
   @include tablet {
     .photo-gallery {
       &__container {

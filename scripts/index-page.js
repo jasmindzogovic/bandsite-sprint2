@@ -6,6 +6,7 @@ const form = document.getElementById("form");
 const formName = document.getElementById("formName");
 const formComment = document.getElementById("comments");
 const formButton = document.querySelector(".form__button");
+const imgContainer = document.querySelector(".photo-gallery__images-container");
 
 // Date function
 
@@ -116,3 +117,24 @@ form.addEventListener("submit", function (e) {
     return userComment;
   }
 });
+
+// Intersection Observer API for images section
+
+const obsFn = function (entries) {
+  const [entry] = entries;
+  if (!entry.isIntersecting) return;
+
+  imgContainer.style.opacity = "1";
+  imgContainer.style.transform = "translateY(15px)";
+  imgContainer.style.transition = "all .2s ease-in-out";
+  observer.unobserve(imgContainer);
+};
+
+const obsOptions = {
+  root: null,
+  threshold: 0.3,
+};
+
+const observer = new IntersectionObserver(obsFn, obsOptions);
+
+observer.observe(imgContainer);
