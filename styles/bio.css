@@ -438,7 +438,8 @@
   border: 1px solid #d22d2d;
 }
 
-input, textarea {
+input,
+textarea {
   color: #afafaf;
 }
 

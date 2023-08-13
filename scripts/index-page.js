@@ -127,6 +127,7 @@ const obsFn = function (entries) {
   imgContainer.style.opacity = "1";
   imgContainer.style.transform = "translateY(15px)";
   imgContainer.style.transition = "all .2s ease-in-out";
+
   observer.unobserve(imgContainer);
 };
 
