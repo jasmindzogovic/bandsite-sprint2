@@ -146,6 +146,7 @@
       <h1 class="comment__header">Join the Conversation</h1>
       <form action="url" method="post" id="form">
         <input
+          autocomplete="off"
           type="image"
           src="./assets/images/Mohan-muruge.jpg"
           id="formImage"
@@ -153,12 +154,13 @@
         <fieldset class="form__container">
           <label for="formName" class="form-description">NAME</label>
           <input
+            autocomplete="off"
             id="formName"
             placeholder="Enter your name"
             name="formName"
           />
           <label for="comments" class="form-description">COMMENT</label>
-          <input name="comments" id="comments" placeholder="Add a new comment" name="formComments"></input>
+          <input autocomplete="off" name="comments" id="comments" placeholder="Add a new comment" name="formComments"></input>
           <button class="form__button">COMMENT</button>
         </fieldset>
       </form>
