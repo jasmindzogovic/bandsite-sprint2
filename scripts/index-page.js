@@ -7,6 +7,8 @@ const formName = document.getElementById("formName");
 const formComment = document.getElementById("comments");
 const formButton = document.querySelector(".form__button");
 const imgContainer = document.querySelector(".photo-gallery__images-container");
+const main = document.querySelector(".main");
+const header = document.querySelector(".header");
 
 // Date function
 
@@ -139,3 +141,25 @@ const obsOptions = {
 const observer = new IntersectionObserver(obsFn, obsOptions);
 
 observer.observe(imgContainer);
+
+// Intersection Observer API for navbar
+
+const navFn = function (entries) {
+  const [entry] = entries;
+  if (!entry.isIntersecting) return;
+
+  header.style.position = "fixed";
+  header.style.width = "100%";
+  header.style.zIndex = "5";
+
+  navObserver.unobserve(main);
+};
+
+const navOptions = {
+  root: null,
+  threshold: 0.5,
+};
+
+const navObserver = new IntersectionObserver(navFn, navOptions);
+
+navObserver.observe(main);

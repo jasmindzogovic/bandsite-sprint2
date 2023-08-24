@@ -1,25 +1,25 @@
-@use './variables' as *;
+@use "./variables" as *;
 
 @mixin tablet {
-    @media (min-width: $tablet-breakpoint) {
-        @content;
-    }
+  @media (min-width: $tablet-breakpoint) {
+    @content;
+  }
 }
 @mixin desktop {
-    @media (min-width: $desktop-breakpoint) {
-        @content;
-    }
+  @media (min-width: $desktop-breakpoint) {
+    @content;
+  }
 }
-@mixin flex-center ($direction){
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: $direction;
+@mixin flex-center($direction) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: $direction;
 }
 @mixin flex-justify {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 @mixin mobile-header-padding {
-    padding: 1.5rem 1rem 1rem 1rem;
+  padding: 1.5rem 1rem 1rem 1rem;
 }
