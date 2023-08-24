@@ -158,6 +158,7 @@ const navFn = function (entries) {
 const navOptions = {
   root: null,
   threshold: 0.5,
+  rootMargin: "0px",
 };
 
 const navObserver = new IntersectionObserver(navFn, navOptions);
