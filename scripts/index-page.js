@@ -12,7 +12,7 @@ const header = document.querySelector(".header");
 
 // Date function
 
-const dateInFull = function () {
+const dateInFull = () => {
   const date = new Date();
   const year = date.getFullYear();
   const month = date.getMonth();
@@ -25,7 +25,7 @@ const dateInFull = function () {
 
 // Function to capitalize first letter
 
-const toCapitalize = function (nameString) {
+const toCapitalize = (nameString) => {
   const nameInput = String(nameString).split(" ");
   const [firstName, lastName] = [...nameInput];
   const [fullFirst, fullLast] = [
@@ -101,7 +101,7 @@ commentGenerator("David Sorensen", lorem20);
 
 // Event listener function to create a new comment
 
-form.addEventListener("submit", function (e) {
+form.addEventListener("submit", (e) => {
   e.preventDefault();
 
   if (formName.value === "" || formComment.value === "") {
@@ -122,7 +122,7 @@ form.addEventListener("submit", function (e) {
 
 // Intersection Observer API for images section
 
-const obsFn = function (entries) {
+const obsFn = (entries) => {
   const [entry] = entries;
   if (!entry.isIntersecting) return;
 
@@ -144,7 +144,7 @@ observer.observe(imgContainer);
 
 // Intersection Observer API for navbar
 
-const navFn = function (entries) {
+const navFn = (entries) => {
   const [entry] = entries;
   if (!entry.isIntersecting) return;
 
