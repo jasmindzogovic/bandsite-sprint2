@@ -157,7 +157,7 @@ const navFn = (entries) => {
 
 const navOptions = {
   root: null,
-  threshold: 0.35,
+  threshold: 0.45,
   rootMargin: "0px",
 };
 
