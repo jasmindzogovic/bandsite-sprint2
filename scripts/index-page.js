@@ -61,24 +61,13 @@ const lorem20 =
 // Comment generating function
 
 const commentGenerator = function (name, comment) {
-  const newDiv = document.createElement("div");
-  newDiv.className = "comment__dynamic";
-  commentsContainer.appendChild(newDiv);
+  const html = `<div class="comment__dynamic">
+  <p class="comment__name-generated">${toCapitalize(name)}</p>
+  <p class="comment__dynamic-content">${comment}</p>
+  <p class="comment__date">${dateInFull()}</p>
+  </div>`;
 
-  const nameInComment = document.createElement("p");
-  nameInComment.className = "comment__name-generated";
-  newDiv.appendChild(nameInComment);
-  nameInComment.textContent = toCapitalize(name);
-
-  const contentInComment = document.createElement("p");
-  contentInComment.className = "comment__dynamic-content";
-  newDiv.appendChild(contentInComment);
-  contentInComment.textContent = comment;
-
-  const dateInComment = document.createElement("p");
-  dateInComment.className = "comment__date";
-  newDiv.appendChild(dateInComment);
-  dateInComment.textContent = dateInFull();
+  commentsContainer.insertAdjacentHTML("afterbegin", html);
 };
 
 // Creating new elements on page through js
