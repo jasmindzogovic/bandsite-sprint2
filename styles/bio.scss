@@ -125,6 +125,8 @@
   }
   &__images-container {
     opacity: 0;
+    transform: translate3d(0, 50px, 0);
+    transition: 0.25s all ease-in-out;
   }
   @include tablet {
     .photo-gallery {

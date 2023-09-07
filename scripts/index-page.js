@@ -116,8 +116,7 @@ const obsFn = (entries) => {
   if (!entry.isIntersecting) return;
 
   imgContainer.style.opacity = "1";
-  imgContainer.style.transform = "translateY(15px)";
-  imgContainer.style.transition = "all .2s ease-in-out";
+  imgContainer.style.transform = "translate3d(0, 0, 0)";
 
   observer.unobserve(imgContainer);
 };
