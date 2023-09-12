@@ -32,19 +32,22 @@
 .section__shows {
   background: linear-gradient(to bottom right, $mercury, $alabaster);
   padding: 10rem 5rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
   &--header {
     font-weight: map-get($map: $font-weights, $key: bold);
     color: $bandsite-black;
     margin-right: 4rem;
   }
-  &--tours {
-    display: flex;
-    flex-wrap: wrap;
-  }
 }
 
 .tour__container {
   font-size: 0.8rem;
+  border-bottom: 1px solid #323232;
+  margin: 0rem 2rem 2rem 2rem;
+  color: $bandsite-black;
+  padding: 0.6rem;
   & > * {
     margin-bottom: 0.5rem;
   }
@@ -57,6 +60,7 @@
     color: $alabaster;
     border: 0;
     border-radius: 2px;
+    cursor: pointer;
     &:hover {
       transform: scale(1.04);
       transition: all 0.25s ease-out;

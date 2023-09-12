@@ -229,19 +229,22 @@
 .section__shows {
   background: linear-gradient(to bottom right, #E1E1E1, #FAFAFA);
   padding: 10rem 5rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
 .section__shows--header {
   font-weight: 700;
   color: #323232;
   margin-right: 4rem;
 }
-.section__shows--tours {
-  display: flex;
-  flex-wrap: wrap;
-}
 
 .tour__container {
   font-size: 0.8rem;
+  border-bottom: 1px solid #323232;
+  margin: 0rem 2rem 2rem 2rem;
+  color: #323232;
+  padding: 0.6rem;
 }
 .tour__container > * {
   margin-bottom: 0.5rem;
@@ -255,6 +258,7 @@
   color: #FAFAFA;
   border: 0;
   border-radius: 2px;
+  cursor: pointer;
 }
 .tour__container--btn:hover {
   transform: scale(1.04);

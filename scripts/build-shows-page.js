@@ -47,31 +47,12 @@ const tours = [
 ];
 
 tours.forEach((tour) => {
-  const tourContainer = document.createElement("div");
-  tourContainer.className = "tour__container";
-  tourContainer.style.borderBottom = "1px solid #323232";
-  tourContainer.style.margin = "0rem 2rem 2rem 2rem";
-  tourContainer.style.color = "#323232";
-  tourContainer.style.padding = ".6rem";
-  tourSectionContainer.appendChild(tourContainer);
+  const html = `<div class="tour__container">
+<p class="tour__container--date">${tour.date}</p>
+<p class="tour__container--city">${tour.city}</p>
+<p class="tour__container--time">${tour.time}</p>
+<button class="tour__container--btn">Buy Tickets</button>
+</div>`;
 
-  const tourDate = document.createElement("p");
-  tourDate.className = "tour__container--date";
-  tourDate.textContent = tour.date;
-  tourContainer.appendChild(tourDate);
-
-  const tourCity = document.createElement("p");
-  tourCity.className = "tour__container--city";
-  tourCity.textContent = tour.city;
-  tourContainer.appendChild(tourCity);
-
-  const tourTime = document.createElement("p");
-  tourTime.className = "tour__container--time";
-  tourTime.textContent = tour.time;
-  tourContainer.appendChild(tourTime);
-
-  const tourBtn = document.createElement("button");
-  tourBtn.className = "tour__container--btn";
-  tourBtn.textContent = "Buy Tickets";
-  tourContainer.appendChild(tourBtn);
+  tourSectionContainer.insertAdjacentHTML("afterend", html);
 });
