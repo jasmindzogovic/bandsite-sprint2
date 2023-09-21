@@ -27,12 +27,17 @@ const dateInFull = () => {
 
 const toCapitalize = (nameString) => {
   const nameInput = String(nameString).split(" ");
-  const [firstName, lastName] = [...nameInput];
-  const [fullFirst, fullLast] = [
-    firstName[0].toUpperCase() + firstName.slice(1),
-    lastName[0].toUpperCase() + lastName.slice(1),
-  ];
-  const fullName = fullFirst.concat(" ", fullLast);
+  const fullName = nameInput
+    .map((name) => name[0].toUpperCase() + name.slice(1))
+    .join(" ");
+
+  // Alternative way to capitalize first letter
+
+  // const [firstName, lastName] = [...nameInput];
+  // const [fullFirst, fullLast] = [
+  //   firstName[0].toUpperCase() + firstName.slice(1),
+  //   lastName[0].toUpperCase() + lastName.slice(1),
+  // ];
   return fullName;
 };
 
