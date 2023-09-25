@@ -14,11 +14,13 @@ const header = document.querySelector(".header");
 
 const dateInFull = () => {
   const date = new Date();
-  const year = date.getFullYear();
-  const month = date.getMonth();
-  const day = date.getDate();
-  const hour = date.getHours();
-  const mins = String(date.getMinutes()).padStart(2, 0);
+  const [year, month, day, hour, mins] = [
+    date.getFullYear(),
+    date.getMonth(),
+    date.getDate(),
+    date.getHours(),
+    String(date.getMinutes()).padStart(2, 0),
+  ];
 
   return `${String(month + 1).padStart(2, 0)}.${day}.${year}, ${hour}:${mins}`;
 };
@@ -30,32 +32,17 @@ const toCapitalize = (nameString) => {
   const fullName = nameInput
     .map((name) => name[0].toUpperCase() + name.slice(1))
     .join(" ");
-
-  // Alternative way to capitalize first letter
-
-  // const [firstName, lastName] = [...nameInput];
-  // const [fullFirst, fullLast] = [
-  //   firstName[0].toUpperCase() + firstName.slice(1),
-  //   lastName[0].toUpperCase() + lastName.slice(1),
-  // ];
   return fullName;
 };
 
-// Clearing the input fields on click
+// Clearing the input fields on focus
+
 formName.addEventListener("focus", () => {
   formName.placeholder = "";
 });
 
-formName.addEventListener("blur", () => {
-  formName.placeholder = "Enter your name";
-});
-
 formComment.addEventListener("focus", () => {
   formComment.placeholder = "";
-});
-
-formComment.addEventListener("blur", () => {
-  formComment.placeholder = "Enter your comment";
 });
 
 // Variable for initial comment
