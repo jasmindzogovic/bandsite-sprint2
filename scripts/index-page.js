@@ -85,7 +85,7 @@ commentGenerator("David Sorensen", lorem20);
 form.addEventListener("submit", (e) => {
   e.preventDefault();
 
-  if (formName.value === "" || formComment.value === "")
+  if (!formName.value  || !formComment.value)
     alert(`Please input name and comment`);
   else if (!formName.value.includes(" ")) alert(`Please input full name`);
   else {
